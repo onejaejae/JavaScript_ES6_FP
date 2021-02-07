@@ -2,6 +2,7 @@
 
 # 제너레이터/이터레이터
 - 제너레이터: 이터레이터이자 이터러블을 생성하는 함수
+- 제너레이터라는 문장을 통해 순회할 수 있는 값을 만들 수 있다는 것은 어떠한 값도 순회할 수 있는 형태로 제너레이터라는 문장을 통해 조작할 수 있으며 제너레이터를 통해서 다양한 값들을 순회할 수 있는 이터러블을 쉽게 만들 수 있다는 이야기
 
 <script>
   function* gen() {
@@ -57,16 +58,18 @@
 
 # for of, 전개 연산자, 구조 분해, 나머지 연산자
 
+- generator는 iterable, iterator 프로토콜을 따르고 있기 때문에  for of, 전개 연산자, 구조 분해, 나머지 연산자 등 js에서 iterable 프로토콜을 따르고 있는 문법들, 혹은 iterable 프로토콜을 따르고 있는 많은 라이브러리들이나 함수들과 함께 사용될 수 있다 
+
 <script>
   log(...odds(10));
   log([...odds(10), ...odds(20)]);
 
   const [head, ...tail] = odds(5);
-  log(head);
-  log(tail);
+  log(head); // 1
+  log(tail); // [3, 5]
 
   const [a, b, ...rest] = odds(10);
-  log(a);
-  log(b);
-  log(rest);
+  log(a); // 1
+  log(b); // 3
+  log(rest); // [5, 7, 9]
 </script>

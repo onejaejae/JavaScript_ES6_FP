@@ -8,7 +8,15 @@
     {name: '후드티', price: 30000},
     {name: '바지', price: 25000}
   ];
+
+  let price = [];
+  for (const p of products) {
+    price.push(p.price)
+  }
+  console.log(price)
 </script>
+
+
 
 
 # map
@@ -45,7 +53,9 @@
 <script>
   log([1, 2, 3].map(a => a + 1));
 
-  log(map(el => el.nodeName, document.querySelectorAll('*')));
+  // log(document.querySelectorAll('*').map(el => el.nodeName)); // 여기서의 map은 Array.prototype.map이고 document.querySelectorAll('*') __proto__에는 map이 없다.
+
+  log(map(el => el.nodeName, document.querySelectorAll('*'))); // 위에서 구현한 map함수로 쓰면 모든 iterable 속성 가능
 
   // const it = document.querySelectorAll('*')[Symbol.iterator]();
   // log(it.next());
