@@ -42,3 +42,5 @@ console.log(iter2.next());
 console.log(iter2.next());
 
 const iter3 = infinity();
+
+// for of, 전개 연산자, 구조 분해, 나머지 연산자
