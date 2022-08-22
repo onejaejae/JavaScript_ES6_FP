@@ -1,3 +1,6 @@
+// 기존의 map의 경우 Array의 prototype 메소드이므로 Array의 인스턴스만 사용 가능
+// 예제에서 만든 custom map의 경우 이터레이터 속성을 가진 모든 자료형 사용 가능
+
 // map
 const products = [
   { name: "반팔티", price: 15000 },
